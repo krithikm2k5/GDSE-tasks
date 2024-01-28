@@ -1,0 +1,30 @@
+def balbrc(imp):
+    lst=[]
+    for i in imp:
+        if i in ["(", "{", "["]:
+            lst.append(i)
+        else:
+            if not lst:
+                return False
+            current_i = lst.pop()
+            if current_i == '(':
+                if i != ")":
+                    return False
+            if current_i == '{':
+                if i != "}":
+                    return False
+            if current_i == '[':
+                if i != "]":
+                    return False
+    if lst:
+        return False
+    return True
+ch="yes"
+while ch=="yes":
+    imp = input("enter the inputs :")
+    if balbrc(imp):
+        print("VALID")
+    else:
+        print("INVALID")
+    ch=input("do you wanna continue? (yes/no) :")
+print("task 1 successfully completed")
