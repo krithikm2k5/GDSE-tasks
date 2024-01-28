@@ -1,0 +1,15 @@
+def m(imp):
+    ms = float('-inf')
+    cs = 0
+    for num in imp:
+        cs = max(num, cs + num)
+        ms = max(ms, cs)
+    return ms
+n=int(input("enter the number of elements to be entered: "))
+imp=[]
+for i in range(n):
+    k=int(input("enter elements number: "))
+    imp.append(k)
+print(imp)
+ms = m(imp)
+print("output : ", ms)
