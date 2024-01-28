@@ -1,0 +1,13 @@
+def pal(s):
+    words = s.split()
+    lst = []
+    for word in words:
+        if word == word[::-1]:
+            lst.append(word)
+        else:
+            palindrome = word + word[-2::-1]
+            lst.append(palindrome)
+    return ' '.join(lst)
+s = input("Enter a sentence: ")
+print("Output:")
+print(pal(s))
